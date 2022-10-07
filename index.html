@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NguyenDangBien</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	 <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/">
+
+    <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- qc -->
+<script type="text/javascript">
+    function hide_float_right() {
+        var content = document.getElementById('float_content_right');
+        var hide = document.getElementById('hide_float_right');
+        if (content.style.display == "none")
+        {content.style.display = "block"; hide.innerHTML = '<a href="javascript:hide_float_right()"> Tắt quảng cáo [X]</a>'; }
+            else { content.style.display = "none"; hide.innerHTML = '<a href="javascript:hide_float_right()">Sản Phẩm Khuyến Mại 75%</a>';
+        }
+        }
+        function myF(){
+          onl.style.display = "block";
+          
+        }
+        function un(){
+            onl.style.display = "none";
+        }
+    </script>
+        
+    <style>
+    .float-ck { position: fixed; bottom: 30px; z-index: 9000}
+    * html .float-ck {position:absolute;bottom:auto; top:expression(eval ('document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)')) };
+    #float_content_right {border: 3px solid #01AEF0;}
+    #hide_float_right {text-align:right; font-size: 11px;}
+    #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+    </style>
+ 
+    
+        <div class="float-ck" style="right: 0px">
+    <div id="hide_float_right" >
+    <a href="javascript:hide_float_right()">Tắt quảng cáo[X]</a></div >
+    <div id="float_content_right">
+    <!-- Start quang cao-->
+<img src="img/19.jpg">
+    <!-- End quang cao -->
+    </div>
+    </div>
+    <!-- QUẢNG CÁO GIỮA -->
+        <div id="onl" style="position: fixed; bottom: 120px; top: 80px; left: 300px; z-index: 100; display: block; margin-top: -40px;">
+            <div style="backgroud-color:black; width:1000px; height:200px;">
+                <a href="javascript:un()" style="color:#F00;" > Tắt quảng cáo [X]</a>
+                <img src="img/sale.jpg" width="700px" height="500px" >
+            </div>
+        </div>
+    <!-- KẾT THÚC QUẢNG CÁO GIỮA -->
+
+</div>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width textarea */
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+    
+    /* When the textarea gets focus, do something */
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/send button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
+    </head>
+    <body>
+    
+    
+    
+    <button class="open-button" style = "z-index: 9;" onclick="openForm() ">chat</button>
+    
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+       
+    
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+    
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" style = "z-index: 999;" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    
+
+    <style>
+        #mySidenav a {
+          position: absolute;
+          left: -20px;
+          transition: 0.3s;
+          padding: 15px;
+          width: 100px;
+          text-decoration: none;
+          font-size: 20px;
+          color: white;
+          border-radius: 0 5px 5px 0;
+          z-index: 10;
+          margin-top: 40px;
+        }
+        
+        #mySidenav a:hover {
+          left: 0;
+        }
+        
+        #about {
+          top: 20px;
+          background-color: #04AA6D;
+}
+        
+        #blog {
+          top: 80px;
+          background-color: #2196F3;
+        }
+        
+        #projects {
+          top: 140px;
+          background-color: #f44336;
+        }
+        
+        #contact {
+          top: 200px;
+          background-color: #555
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div id="mySidenav" class="sidenav">
+          <a href="#" id="about" >Trang chủ</a>
+          <a href="#" id="blog">Bài viết</a>
+          <a href="#" id="projects">Facebook</a>
+          <a href="#" id="contact">Instagram</a>
+        </div>
+   
+
+
+    <!-- con -->
+	<div class="navbar">
+  <a href="#">Trang chủ</a>
+  <a href="#">Mới*</a>
+  <a href="#">Bán chạy</a>
+  <div class="dropdown">
+    <button class="dropbtn">Hãng
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Asus</a>
+      <a href="#">Acer</a>
+      <a href="#">...</a>
+    </div>
+  </div>
+</div>
+<form action=""id="search-box">
+	<input type="text">
+	<button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <img src="img/bbb.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="img/bbb.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="img/bbb.jpg" style="width:100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<h1 style="color: brown">MỘT SỐ SẢN PHẦM</h1>
+<div class="home-product">
+                            <div class="grid__row">
+                                <div class="grid__column-2-4">
+
+                                    <a href="" class="home-product-item">
+                                        <a href="file:///C:/Users/PC/Documents/Zalo%20Received%20Files/bienngu/baimoi/index.html">
+                                        <img src = "img/4.jpg" alt="" style="width: 100%"></a>
+                                        <h4 class="home-product-item__name">Mua laptop gaming Asus Rog diện mạo cá tính, hệ thống làm mát thông minh, cấu hình mạnh mẽ, chiến game. Cam kết chính hãng, trả góp 0%, bảo hành 2 năm</h4>
+                                        <div class="home-product__price">
+                                            <span class="home-product__price-old">25.690.000đ</span>
+                                            <span class="home-product__price-current">24.000.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-no ti-heart"></i>
+                                                <i class="home-product-item__like-yes ti-heart"></i>
+                                            </span>
+            
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="ti-star"></i>
+                                            </div>
+
+
+                                            <span class="home-product-item__sold">Đã bán 189</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__origin-brand">BBN</span>
+                                            <span class="home-product-item__origin-name">Việt Nam</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="ti-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a href="" class="home-product-item">
+                                        <img src = "img/5.jpg" alt="" style="width: 100%">
+                                        <h4 class="home-product-item__name">[Mới 100%] Asus TUF A15 FA506Q-SB54 (Ryzen 5-5600H, 16GB, 512GB, RTX 3050Ti, 15.6″ FHD IPS 144Hz)</h4>
+                                        <div class="home-product__price">
+                                            <span class="home-product__price-current">24.000.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-no ti-heart"></i>
+                                                <i class="home-product-item__like-yes ti-heart"></i>
+                                            </span>
+            
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="ti-star"></i>
+                                            </div>
+
+
+                                            <span class="home-product-item__sold">Đã bán 1200</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__origin-brand">BBN</span>
+                                            <span class="home-product-item__origin-name">Việt Nam</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="ti-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a href="" class="home-product-item">
+                                        <img src = "img/6.jpg" alt="" style="width: 100%">
+                                        <h4 class="home-product-item__name">[Mới 100% Full Box] Laptop Acer Nitro 5 Eagle 2021 AN515-57-5669 NH.QEHSV.001 - Intel Core i5 11400H GTX 1650</h4>
+                                        <div class="home-product__price">
+                                            <span class="home-product__price-current">19.000.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-no ti-heart"></i>
+                                                <i class="home-product-item__like-yes ti-heart"></i>
+                                            </span>
+            
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="ti-star"></i>
+                                            </div>
+
+
+                                            <span class="home-product-item__sold">Đã bán 901</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__origin-brand">BBN</span>
+                                            <span class="home-product-item__origin-name">Việt Nam</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="ti-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a href="" class="home-product-item">
+                                        <img src = "img/7.jpg" alt="" style="width: 100%">
+                                        <h4 class="home-product-item__name">Jual HP Victus 16-e0089AX Gaming-Blue [R5-5600H/RTX 3060 6GB/2x8GB/512GB SSD/NO-ODD/Win10/OHS 2019/16.1 FHD IPS 144H</h4>
+                                        <div class="home-product__price">
+                                            <span class="home-product__price-current">21.000.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-no ti-heart"></i>
+                                                <i class="home-product-item__like-yes ti-heart"></i>
+                                            </span>
+            
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="ti-star"></i>
+                                            </div>
+
+
+                                            <span class="home-product-item__sold">Đã bán 705</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__origin-brand">BBN</span>
+                                            <span class="home-product-item__origin-name">Việt Nam</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="ti-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                    </a>
+                                </div>
+								 <div class="grid__column-2-4">
+                                    <a href="" class="home-product-item">
+                                        <img src = "img/8.jpg" alt="" style="width: 100%">
+                                        <h4 class="home-product-item__name">Laptop Apple MacBook Pro M1 2020 13 inch 256GB MYDA2SA/A Bạc</h4>
+                                        <div class="home-product__price">
+                                            <span class="home-product__price-current">29.900.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-no ti-heart"></i>
+                                                <i class="home-product-item__like-yes ti-heart"></i>
+                                            </span>
+            
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="home-product-item__rating--icon-gold ti-star"></i>
+                                                <i class="ti-star"></i>
+                                            </div>
+											     <span class="home-product-item__sold">Đã bán 1900</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__origin-brand">BBN</span>
+                                            <span class="home-product-item__origin-name">Việt Nam</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="ti-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                    </a>
+                                </div>
+<ul class="pagiation home-product__pagiation">
+                            <li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">
+                                    <i class="pagiation-item__icon fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+
+                            <li class="pagiation-item pagiation-item--active">
+                                <a href="" class="pagiation-item__link">1</a>
+                            </li>
+                            <li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">2</a>
+                            </li><li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">3</a>
+                            </li><li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">4</a>
+                            </li><li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">5</a>
+                            </li><li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">...</a>
+                            </li><li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">14</a>
+                            </li>
+                            <li class="pagiation-item">
+                                <a href="" class="pagiation-item__link">
+                                    <i class="pagiation-item__icon fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+								
+<section><div class="container">
+			<div class="page-content page-content-img">
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:16pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:700;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Tầm quan trọng của Laptop ở đời sống thường ngày&nbsp;
+					</span>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Laptop, hay còn được gọi là máy tính xách tay, là một loạt máy tính mà người dùng có thể mang theo bên mình và sử dụng mọi lúc mọi nơi. Chúng bao gồm màn hình, bàn phím, bàn di chuột và chuột. Vì máy tính xách tay được sử dụng khi di chuyển nên chúng có pin cho phép hoạt động mà không cần cắm vào ổ cắm điện. Bên trong laptop là một bộ đổi nguồn cho phép chúng sử dụng nguồn điện từ ổ cắm và sạc pin.</span>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Mặc dù máy tính xách tay trước đây thường được đánh giá là chậm hơn và hiệu năng kém hơn đáng kể so với máy tính để bàn, nhưng những tiến bộ trong công nghệ sản xuất đã cho phép máy tính xách tay hoạt động tốt gần như các máy tính để bàn. Trên thực tế, máy tính xách tay cao cấp thường hoạt động tốt hơn các hệ thống máy tính để bàn tầm thấp hoặc thậm chí tầm trung. Hầu hết các laptop bao gồm một số cổng I / O, chẳng hạn như cổng USB, cho phép bàn phím và chuột tiêu chuẩn được sử dụng với máy tính xách tay. Máy tính xách tay hiện đại cũng thường bao gồm một bộ điều khiển mạng không dây, cho phép người dùng truy cập Internet mà không yêu cầu bất kỳ dây dẫn nào.</span>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Máy tính xách tay được yêu thích vì các tính năng mà chúng mang lại kết hợp với tính di động. Sinh viên sử dụng máy tính xách tay có một số lợi thế, bao gồm ghi chú chi tiết và hiệu quả hơn, soạn thảo và chỉnh sửa nhanh hơn, đồng thời làm việc nhóm và học tập thuận tiện. Laptop cũng là một vật dụng không thể thiếu cho những người đi làm. Ngày càng có nhiều tổ chức kinh doanh lựa chọn giao máy tính xách tay để nhân viên có thể thực hiện nhiệm vụ của mình.&nbsp;</span></p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:16pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:700;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Các hãng Laptop phổ biến hiện nay</span>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Tại Việt Nam, các loại laptop thường chạy 3 hệ điều hành chính đó là: Mac OS, Window và Linux. Hiện tại trên thị trường có rất nhiều mẫu mã laptop được sản xuất phù hợp với nhu cầu sử dụng của từng người dùng. Các sản phẩm laptop của Apple được người tiêu dùng tin tưởng và đánh giá cao về không những chỉ về thiết kế mà còn hiệu năng máy. Phiên bản Pro của MacBook ra mắt vào tháng 1 năm 2006, là thiết bị thứ hai của Apple sử dụng chip Intel sau iMac. MacBook Pro ban đầu cho phép người dùng lựa chọn CPU 1.83GHz hoặc 2.0GHz, thông số kỹ thuật xuất sắc vào thời điểm đó - mẫu 15inch xuất hiện đầu tiên, sau đó là 17inch và cả hai phiên bản của MacBook Pro đều được cập nhật tính năng vào cuối năm đó.&nbsp; Trong những năm gần đây, Macbook Air cũng đã trở thành máy tính xách tay bán chạy nhất của Apple, mang đến sự kết hợp giữa tính di động, sức mạnh và giá cả đã giúp khởi động xu hướng ultrabook ở hãng đối thủ là máy tính xách tay Windows. MacBook Air đã trở nên mỏng hơn và thậm chí còn mạnh mẽ hơn. Gần đây, Apple đã cho ra mắt con chip M1 - con chip đầu tiên của được thiết kế đặc biệt cho máy Mac, nó mang lại hiệu suất đáng kinh ngạc, công nghệ tùy chỉnh và hiệu suất năng lượng mang tính cách mạng. Với một bước nhảy vọt về hiệu suất trên mỗi watt, mỗi máy Macbook với M1 đều được biến đổi thành một loại sản phẩm hoàn toàn khác biệt.&nbsp;</span></p><p dir="ltr" style="text-align: center; line-height: 1.38; margin-top: 0pt; margin-bottom: 8pt;">
+				
+				<span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"><span style="border:none;display:inline-block;overflow:hidden;width:624px;height:416px;"><img alt="A picture containing text, monitor, indoor, electronics
+
+Description automatically generated" src="https://lh6.googleusercontent.com/zIXWToWfjWul15wRO5iloeyzAAtBhRKS3-DPlWqr0XxlJqJOD18_R6vRR73jQpy0SYSc5FKIxxn6HvGLMpskpW0emvM8U3T0M7-BVRJcDETgMRzJFGU9fdIIDsM6DY4etjQIc4k" width="624" height="416" style="margin-left:0px;margin-top:0px;"></span>
+				
+				</span>
+				</p>
+				<p dir="ltr" style="line-height:1.295;text-align: justify;margin-top:0pt;margin-bottom:8pt;">
+					<span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Microsoft Surface Pro là một chiếc laptop 2 trong 1 gọn nhẹ, cấu hình cao và thời lượng pin bền bỉ. Sản phẩm còn được trang bị máy ảnh Windows Hello IR, webcam 1080p hay cặp loa âm thanh nổi 1,6 watt. Mạnh mẽ hơn bao giờ hết, Surface Pro mới mang đến cho bạn một chiếc máy tính xách tay tốt nhất cùng với tính linh hoạt của một máy tính bảng. Màn hình PixelSense tuyệt đẹp hỗ trợ Surface Pen và cảm ứng, trong khi công nghệ sạc nhanh và dung lượng pin sẽ cung cấp cho bạn nhiều năng lượng để làm việc cả ngày và giải trí suốt đêm.</span>
+				</p>
+				<p>
+					<b style="font-weight:normal;"><br><br></b>
+				</p>
+				<p dir="ltr" style="text-align: center; line-height: 1.38; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">
+					<span style="border:none;display:inline-block;overflow:hidden;width:624px;height:351px;"><img alt="A picture containing text, electronics, display, computer
+
+Description automatically generated" src="https://lh6.googleusercontent.com/9K4P-5IUuvVyNuvIoprVKn4mZh3NQaknk6Q9pGNs-FoL0hDmJHWqcvH6FX6qPIXcg7G6ABTBfyCocpQvFL9wg9L5Aaj4PIjuBKKaO0cNIu3sEFNkbY1FKjdZHity8CUcx9k3pXg" width="624" height="351" style="margin-left:0px;margin-top:0px;"></span>
+					</span>
+				</p>
+				<p>
+					<b style="font-weight:normal;"><br></b>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:700;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Mua Laptop tại Hoàng Hà Mobile để nhận giá tốt nhất</span>
+				</p>
+				<p dir="ltr" style="line-height:1.3800000000000001;text-align: justify;margin-top:0pt;margin-bottom:8pt;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Lựa chọn một chiếc laptop người dùng sẽ phải cân nhắc nhiều khía cạnh như dung lượng pin, cấu hình máy...để đảm bảo được sở hữu một sản phẩm sử dụng bền lâu, chúng là công cụ đắc lực trong thời đại công nghệ phát triển mạnh. Làm việc và học tập bằng laptop con người cũng sẽ chủ động hơn về thời gian mà vẫn đem lại hiệu quả cao cùng với đó là bảo đảm được vấn đề riêng tư về dữ liệu cá nhân. Hoàng Hà Mobile đem đến cho bạn những sản phẩm Laptop chính hãng tốt nhất với giá thành vô cùng phải chăng. Chúng tôi đem lại những lựa chọn tốt nhất dành cho người tiêu dùng và cũng sẽ đem lại những ưu đãi khuyến mại cùng chế độ bảo hành tốt nhất.&nbsp;</span>
+				</p>
+				<p dir="ltr" style="line-height:1.295;text-align: justify;margin-top:0pt;margin-bottom:8pt;">
+				<span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Để mua phụ kiện chính hãng giá rẻ tại Hoàng Hà Mobile, khách hàng hãy truy cập ngay website: </span>
+				<a href="https://hoanghamobile.com" style="text-decoration:none;"><span style="font-size:13.999999999999998pt;font-family:Arial;color:#0563c1;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://hoanghamobile.com</span></a><span style="font-size:13.999999999999998pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"> hoặc liên hệ hotline 1900.2091 để được tư vấn. Mua hàng tại đây bạn sẽ luôn yên tâm về chất lượng và khả năng sử dụng lâu bền của sản phẩm</span>
+				</p>
+				<p>
+					<br>
+					<br>
+					<br>
+				</p>
+			</div>
+		</div>
+		</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="grid wide">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer-heading">CHĂM SÓC KHÁCH HÀNG</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Trung Tâm Trợ Giúp</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Hướng Dẫn Mua Hàng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Hướng Dẫn Bán Hàng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Chăm Sóc Khách Hàng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Chính Sách Bảo Hành</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer-heading">BBN</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Giới Thiệu Về Cửa Hàng BBN</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Tuyển Dụng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Kênh Người Bán</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Flash Sales</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">Điều Khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer-heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-link">
+                                    <i class="footer-link__icon fab fa-facebook-square">
+                                        <a href="https://www.facebook.com/profile.php?id=100054470104243">Facebook</a>
+                                    </i>
+                                   
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">
+                                    <i class="footer-link__icon fab fa-instagram">
+                                        <a href="https://www.instagram.com/bien.1612/"> Instagram</a>
+                                    </i>
+                                   
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-link">
+                                    <i class="footer-link__icon ti-linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-botom">
+                <div class="grid wide">
+                    <p class="footer-text">Shop BBN</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
